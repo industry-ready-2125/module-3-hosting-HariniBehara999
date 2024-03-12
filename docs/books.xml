@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<!-- <books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd"> -->
+
+<!DOCTYPE books SYSTEM "books.dtd">
+  <books>
+  <book category="Social Science" bookid="19">
+    <titleofbook>Sociology</titleofbook>
+    <author>Srushti Jayanth Deshmukh</author>
+    <price>899</price>
+  </book>
+  <book category="Inspiration" bookid="36">
+    <titleofbook>Five steps to success</titleofbook>
+    <author>Yendamoori Veerandranath</author>
+    <price>650</price>
+  </book>
+  <book category="comic" bookid="45">
+    <titleofbook>Intelligence and humour</titleofbook>
+    <author>Tenali Ramakrishna</author>
+    <price>1050</price>
+  </book>
+  <book category="Autobiography" bookid="26">
+    <titleofbook>Wings oF Fire</titleofbook>
+    <author>APJ Abdul Kalam</author>
+    <price>1200</price>
+  </book>
+  <book category="Story" bookid="64">
+    <titleofbook>Panchatantra</titleofbook>
+    <author>Narayana Murthy</author>
+    <price>450</price>
+  </book>
+</books>

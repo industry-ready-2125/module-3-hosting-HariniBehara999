@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        div {
+
+            background-color: #e6e6e6;
+            border-radius: 10px;
+            width: 450px;
+            height: 500px;
+            text-align: left;
+            padding-left: 12px;
+        }
+    </style>
+    <script>
+        function validateRegistrationForm() {
+            var email = document.getElementById('email').value;
+            var pass = document.getElementById('pass').value;
+            var cpass = document.getElementById('confirmpassword').value; 
+            var numb = document.getElementById('mobile').value;
+
+            var uppercaseRegex = /[A-Z]/;
+            var lowercaseRegex = /[a-z]/;
+            var numberRegex = /[0-9]/;
+            var specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            var mobileRegex = /^[6-9]\d{9}$/;
+
+            if (!uppercaseRegex.test(pass) || !lowercaseRegex.test(pass) || !numberRegex.test(pass) || !specialCharRegex.test(pass) || pass.length < 8) {
+                alert("Password must include at least one uppercase letter, one lowercase letter, one special character, and at least 8 characters long.");
+                return false;
+            }
+            if(cpass!=pass){
+                alert("The Password you entered doesn't match with the actual password.");
+                return false;
+            }
+
+            if (!email || !emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            
+            if (!mobile || !mobileRegex.test(numb)) {
+                alert("Please enter a valid mobile number starting from 6 to 9 with a total of 10 digits.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <div>
+            <form onsubmit="return validateRegistrationForm()">
+                <br> <br>
+                <label>Enter your Name: </label>
+                <input type="text" name="name"> <br><br>
+                <label>Enter your Email Address: </label>
+                <input type="email" name="email" id="email"><br><br>
+                <label>Area of Interest: </label>
+
+                <input type="radio" id="book" name="book" value="Social" />Sociol
+                <input type="radio" id="book" name="book" value="Novels" />Novels
+                <input type="radio" id="book" name="book" value="Stories" />Comics
+                <input type="radio" id="book" name="book" value="Tece" />Technology<br>
+                <br>
+                <label>Create your password: </label>
+                <input type="password" name="pass" id="pass"><br> <br>
+                <label>Confirm your password: </label>
+                <input type="password" name="confirmpassword" id="confirmpassword"><br> <br>
+                <label>Enter your mobile number: </label>
+                <input type="tel" name="mobile" id="mobile"><br><br>
+                <label>Enter your Date of birth : </label>
+                <input type="date" id="dob" name="dob"><br>
+                <br><label>Enter your gender</label>
+                <input type="radio" id="gender" name="gender" value="male" />Male
+                <input type="radio" id="gender" name="gender" value="female" />Female
+                <input type="radio" id="gender" name="gender" value="others" />others <br> <br>
+                <label style="text-align: left;">Enter your Address: </label>
+                <br><br><textarea></textarea>
+                <br><br><center><input type="submit" value="sign-up"></center>
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>

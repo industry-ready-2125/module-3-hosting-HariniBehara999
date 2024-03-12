@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="loginstyle.css">
+	<script>
+    
+    function validateLoginForm() {
+      var username = document.getElementById('username').value;
+      var pass = document.getElementById('pass').value;
+
+      if (username.length < 6) {
+        alert('Username must be at least 6 characters.');
+        return false;
+      }
+      var pass = document.getElementById('pass').value;
+        
+            var uppercaseRegex = /[A-Z]/;
+            var lowercaseRegex = /[a-z]/;
+            var numberRegex = /[0-9]/;
+            var specialCharRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
+            if (!uppercaseRegex.test(pass) || !lowercaseRegex.test(pass) || !numberRegex.test(pass) || !specialCharRegex.test(pass) || pass.length < 8) {
+                alert("Password must include at least one uppercase letter,one lowercase letter,one special character and atleast 8 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+ 
+
+     </script>
+</head>
+<body>
+	<center><div>
+	<br><label>No account, click here to Sign Up:</label><br><br>
+    <a href="Registration.html">Sign Up</a><br><br>
+	<form onsubmit="return validateLoginForm()">
+			<label>Enter your Username: </label>
+        <input type="text" name="username" id="username"> <br><br>
+        <label>Enter your Password: </label>  
+         <input type="password" name="pass" id="pass"><br> <br>
+         
+  <p style="padding-left:185px"> <input  type="submit" value="sign-in"></p>
+
+         <a href="for.html">Forget Password ?</a>
+
+		
+	</form>
+</div>
+</center>
+</body>
+</html>	
